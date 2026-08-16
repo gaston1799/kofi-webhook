@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: kofi-webhook
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /
+    envVars:
+      - key: KOFI_WEBHOOK_VERIFICATION_TOKEN
+        sync: false
+      - key: GITHUB_PAT
+        sync: false
+      - key: KOFI_DONATIONS_REPO
+        value: gaston1799/ko-fi-donations
