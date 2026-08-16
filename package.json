@@ -1,16 +1,20 @@
 {
   "name": "kofi-webhook",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
-  "description": "Ko-fi webhook receiver + public donation feed for gaston1799.",
+  "description": "Ko-fi + GitHub Sponsors webhook receiver and public donation feed for gaston1799 (Cloudflare Workers or Node/Express).",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy:cf": "npx wrangler deploy"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
   }
 }

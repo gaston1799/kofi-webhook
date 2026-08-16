@@ -1,0 +1,16 @@
+# Cloudflare Workers config - primary deploy target (free tier, no credit card).
+#   npx wrangler deploy          # deploy the worker
+#   npx wrangler secret put NAME # set each secret (KOFI_WEBHOOK_VERIFICATION_TOKEN,
+#                                # GITHUB_WEBHOOK_SECRET, GITHUB_PAT)
+name = "kofi-webhook"
+main = "worker.mjs"
+compatibility_date = "2025-01-01"
+workers_dev = true
+
+[vars]
+KOFI_DONATIONS_REPO = "gaston1799/ko-fi-donations"
+
+# Secrets - set with `npx wrangler secret put`, never commit them here:
+#   KOFI_WEBHOOK_VERIFICATION_TOKEN  (Ko-fi webhook page token)
+#   GITHUB_WEBHOOK_SECRET            (GitHub Sponsors webhook secret)
+#   GITHUB_PAT                       (GitHub token, Contents read/write on the donations repo)

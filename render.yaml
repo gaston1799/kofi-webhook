@@ -10,6 +10,8 @@ services:
     envVars:
       - key: KOFI_WEBHOOK_VERIFICATION_TOKEN
         sync: false
+      - key: GITHUB_WEBHOOK_SECRET
+        sync: false
       - key: GITHUB_PAT
         sync: false
       - key: KOFI_DONATIONS_REPO
